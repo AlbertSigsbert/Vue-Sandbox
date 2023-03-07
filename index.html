@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Vue JS</title>
   </head>
   <body>
     <h1>Hello, VueJS</h1>
 
     <div id="app">
-      <div v-if="showBooks">
+      <!-- <div v-if="showBooks">
         <p>{{ title}} - {{author}} - {{age}}</p>
         <button v-on:click="age++">Increase age</button>
         <button v-on:click="age--">Decrease age</button>
@@ -21,7 +21,7 @@
 
       <div>
         <button @click="toggle">Toggle</button>
-      </div>
+      </div> -->
 
       <br />
 
@@ -43,8 +43,6 @@
         </div>
       </div> -->
 
-    
-
       <!-- Attribute Binding -->
       <!-- <a v-bind:href="url" target="_blank" rel="noopener">Bing</a>
       <div class="container">
@@ -59,19 +57,35 @@
         </div>
      </div> -->
 
-     <!-- Dynamic Classes -->
-      <!-- <div class="container">
-        <div class="card" :class="{fav: movie.isFav}" v-for="movie in movies" @click="toggleFav(movie.title)" >
-          <img :src="movie.coverImageURL" :alt="movie.title" class="card-image">
+      <!-- Computed Properties -->
+      <div class="btn-container">
+        <button @click="showFav = false">All Movies</button>
+        <button @click="showFav = true">Fav Movies</button>
+      </div>
+
+      <!-- Dynamic Classes -->
+      <div class="container">
+        <div
+          class="card"
+          :class="{fav: movie.isFav}"
+          v-for="movie in favMovies"
+          @click="toggleFav(movie.title)"
+        >
+          <img
+            :src="movie.coverImageURL"
+            :alt="movie.title"
+            class="card-image"
+          />
           <div class="card-content">
             <h4 class="card-title">{{movie.title}}</h4>
             <p class="card-info"><strong>Rating: </strong>{{movie.rating}}</p>
             <p class="card-info"><strong>Year: </strong>{{movie.year}}</p>
-            <p class="card-info"><strong>Genre: </strong>{{movie.genre.join(", ")}}</p>
+            <p class="card-info">
+              <strong>Genre: </strong>{{movie.genre.join(", ")}}
+            </p>
           </div>
         </div>
-     </div> -->
-
+      </div>
     </div>
 
     <script src="app.js"></script>

@@ -7,8 +7,10 @@ const app = Vue.createApp({
       author: "Park jung ki",
       age: 23,
       showBooks: true,
+      showFav: false,
       x: 0,
       y: 0,
+
       movies: [
         {
           title: "The Matrix",
@@ -76,6 +78,14 @@ const app = Vue.createApp({
       this.y = e.offsetY;
     },
   },
+  computed:{
+    favMovies(){
+      if(this.showFav){
+        return this.movies.filter(movie => movie.isFav)
+      }
+      return this.movies
+    }
+  }
 });
 
 app.mount("#app");

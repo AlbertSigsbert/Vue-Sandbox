@@ -53,3 +53,11 @@
   .card.fav{
     border: 2px solid red;
   }
+
+  .btn-container {
+   margin:20px 0;
+  }
+  .btn-container button {
+   margin-left:10px;
+   padding:.5rem;
+  }
