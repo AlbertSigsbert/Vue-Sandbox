@@ -49,3 +49,7 @@
     font-size: 16px;
     margin: 5px 0;
   }
+
+  .card.fav{
+    border: 2px solid red;
+  }

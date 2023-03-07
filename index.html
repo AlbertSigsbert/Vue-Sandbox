@@ -59,6 +59,19 @@
         </div>
      </div> -->
 
+     <!-- Dynamic Classes -->
+      <!-- <div class="container">
+        <div class="card" :class="{fav: movie.isFav}" v-for="movie in movies" @click="toggleFav(movie.title)" >
+          <img :src="movie.coverImageURL" :alt="movie.title" class="card-image">
+          <div class="card-content">
+            <h4 class="card-title">{{movie.title}}</h4>
+            <p class="card-info"><strong>Rating: </strong>{{movie.rating}}</p>
+            <p class="card-info"><strong>Year: </strong>{{movie.year}}</p>
+            <p class="card-info"><strong>Genre: </strong>{{movie.genre.join(", ")}}</p>
+          </div>
+        </div>
+     </div> -->
+
     </div>
 
     <script src="app.js"></script>

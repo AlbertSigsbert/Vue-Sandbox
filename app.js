@@ -14,6 +14,7 @@ const app = Vue.createApp({
           title: "The Matrix",
           rating: 8.1,
           year: 1999,
+          isFav:true,
           genre: ["Action", "Science Fiction"],
           coverImageURL: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
         },
@@ -21,6 +22,7 @@ const app = Vue.createApp({
           title: "The Shawshank Redemption",
           rating: 8.7,
           year: 1994,
+          isFav:false,
           genre: ["Drama", "Crime"],
           coverImageURL: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
         },
@@ -28,12 +30,14 @@ const app = Vue.createApp({
           title: "The Godfather",
           rating: 8.7,
           year: 1972,
+          isFav:true,
           genre: ["Drama", "Crime"],
           coverImageURL: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
         },
         {
           title: "The Dark Knight",
           rating: 8.5,
+          isFav:false,
           year: 2008,
           genre: ["Action", "Crime", "Drama", "Thriller"],
           coverImageURL: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
@@ -42,6 +46,7 @@ const app = Vue.createApp({
           title: "The Lord of the Rings: The Return of the King",
           rating: 8.5,
           year: 2003,
+          isFav:true,
           genre: ["Adventure", "Fantasy", "Action"],
           coverImageURL: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg"
         }
@@ -54,6 +59,10 @@ const app = Vue.createApp({
     },
     toggle() {
       this.showBooks = !this.showBooks;
+    },
+    toggleFav(movieTitle) {
+      const selectedMovie = this.movies.find(movie => movie.title === movieTitle)
+      selectedMovie.isFav = !selectedMovie.isFav
     },
 
     handleEvent(e, data) {
