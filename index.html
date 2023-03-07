@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        .box{
-            padding: 100px 0;
-            width: 400px;
-            text-align: center;
-            background: #ddd;
-            margin: 20px;
-            display: inline-block;
-        }
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
     </style>
     <title>Vue JS</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello, VueJS</h1>
 
     <div id="app">
-       <div v-if="showBooks">
+      <div v-if="showBooks">
         <p>{{ title}} - {{author}} - {{age}}</p>
         <button v-on:click="age++">Increase age</button>
         <button v-on:click="age--">Decrease age</button>
         <div @click="changeTitle('The Three Musketeers')">Change Title</div>
-       </div>
+      </div>
 
-        <div>
-         <button @click="toggle">Toggle</button>
-        </div>
+      <div>
+        <button @click="toggle">Toggle</button>
+      </div>
 
-        <br/>
+      <br />
 
-        <!-- Mouse Events -->
-        <div class="box" @mouseover="handleEvent($event, 12)">mouseover (enter)</div>
+      <!-- Mouse Events -->
+      <!-- <div class="box" @mouseover="handleEvent($event, 12)">mouseover (enter)</div>
         <div class="box" @mouseleave="handleEvent">mouseleave</div>
         <div class="box" @dblclick="handleEvent">doubleclick</div>
-        <div class="box" @mousemove="handleMousemove">Position - ({{x}}, {{y}})</div>
+        <div class="box" @mousemove="handleMousemove">Position - ({{x}}, {{y}})</div> -->
+
+      <br />
+
+      <!-- Outputting Lists -->
+
+      <!-- <div v-for="movie in movies">
+        <div class="box">
+          <h2>{{movie.title}}</h2>
+          <p><strong>Genre: </strong>{{movie.genre}}</p>
+          <p><strong>Year: </strong>{{movie.year}}</p>
+          <p><strong>Rating: </strong>{{movie.rating}}</p>
+        </div>
+      </div> -->
+
+      
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
