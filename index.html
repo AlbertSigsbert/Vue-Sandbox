@@ -5,16 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-      .box {
-        padding: 100px 0;
-        width: 400px;
-        text-align: center;
-        background: #ddd;
-        margin: 20px;
-        display: inline-block;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <title>Vue JS</title>
   </head>
   <body>
@@ -43,7 +34,6 @@
       <br />
 
       <!-- Outputting Lists -->
-
       <!-- <div v-for="movie in movies">
         <div class="box">
           <h2>{{movie.title}}</h2>
@@ -53,7 +43,22 @@
         </div>
       </div> -->
 
-      
+    
+
+      <!-- Attribute Binding -->
+      <!-- <a v-bind:href="url" target="_blank" rel="noopener">Bing</a>
+      <div class="container">
+        <div class="card" v-for="movie in movies" >
+          <img :src="movie.coverImageURL" :alt="movie.title" class="card-image">
+          <div class="card-content">
+            <h4 class="card-title">{{movie.title}}</h4>
+            <p class="card-info"><strong>Rating: </strong>{{movie.rating}}</p>
+            <p class="card-info"><strong>Year: </strong>{{movie.year}}</p>
+            <p class="card-info"><strong>Genre: </strong>{{movie.genre.join(", ")}}</p>
+          </div>
+        </div>
+     </div> -->
+
     </div>
 
     <script src="app.js"></script>
