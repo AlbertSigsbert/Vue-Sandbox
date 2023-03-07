@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
     <title>Vue JS</title>
 </head>
 <body>
@@ -22,6 +31,14 @@
         <div>
          <button @click="toggle">Toggle</button>
         </div>
+
+        <br/>
+
+        <!-- Mouse Events -->
+        <div class="box" @mouseover="handleEvent($event, 12)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">doubleclick</div>
+        <div class="box" @mousemove="handleMousemove">Position - ({{x}}, {{y}})</div>
     </div>
 
     <script src="app.js"></script>

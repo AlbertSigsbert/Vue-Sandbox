@@ -5,7 +5,9 @@ const app = Vue.createApp({
       title: "The Land of Wind",
       author: "Park jung ki",
       age: 23,
-      showBooks:true
+      showBooks:true,
+      x:0,
+      y:0
     };
   },
   methods:{
@@ -14,6 +16,18 @@ const app = Vue.createApp({
     },
     toggle(){
         this.showBooks = !this.showBooks
+    },
+
+    handleEvent(e,data){
+      console.log('Event type: ',e.type);
+      if (data) {
+        console.log('Data: ',data);
+      }
+    },
+    handleMousemove(e){
+      this.x = e.offsetX;
+      this.y = e.offsetY;
+
     }
   }
 });
